@@ -45,7 +45,13 @@ namespace MyDebts
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int add = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int appIcon = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int edit = 2130837506;
 			
 			static Drawable()
 			{
@@ -60,23 +66,44 @@ namespace MyDebts
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050007
+			public const int EntryAmount = 2131034119;
+			
+			// aapt resource value: 0x7f05000b
+			public const int EntryDelete = 2131034123;
+			
+			// aapt resource value: 0x7f050006
+			public const int EntryName = 2131034118;
+			
+			// aapt resource value: 0x7f050009
+			public const int EntryOwesMe = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int EntrySave = 2131034122;
+			
+			// aapt resource value: 0x7f050008
+			public const int EntryWhen = 2131034120;
+			
 			// aapt resource value: 0x7f050002
-			public const int Amount = 2131034114;
-			
-			// aapt resource value: 0x7f050004
-			public const int Comment = 2131034116;
-			
-			// aapt resource value: 0x7f050000
-			public const int Control = 2131034112;
-			
-			// aapt resource value: 0x7f050001
-			public const int Name = 2131034113;
-			
-			// aapt resource value: 0x7f050003
-			public const int When = 2131034115;
+			public const int RowAmount = 2131034114;
 			
 			// aapt resource value: 0x7f050005
-			public const int appDataListView = 2131034117;
+			public const int RowComment = 2131034117;
+			
+			// aapt resource value: 0x7f050004
+			public const int RowEdit = 2131034116;
+			
+			// aapt resource value: 0x7f050000
+			public const int RowMainContent = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int RowName = 2131034113;
+			
+			// aapt resource value: 0x7f050003
+			public const int RowWhen = 2131034115;
+			
+			// aapt resource value: 0x7f05000c
+			public const int appDataListView = 2131034124;
 			
 			static Id()
 			{
@@ -95,7 +122,10 @@ namespace MyDebts
 			public const int DebtListViewRow = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int Edit = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Main = 2130903042;
 			
 			static Layout()
 			{
@@ -110,11 +140,8 @@ namespace MyDebts
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
-			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int ApplicationName = 2130968576;
 			
 			static String()
 			{

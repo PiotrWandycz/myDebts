@@ -4,6 +4,7 @@ namespace MyDebts.Entities
 {
     public class Person
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public float Amount { get; set; }
         public DateTime When { get; set; }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <EditText
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kto"
+        android:textSize="20sp"
+        android:id="@+id/EntryName" />
+    <EditText
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ile"
+        android:textSize="20sp"
+        android:id="@+id/EntryAmount" />
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:firstDayOfWeek="2"
+        android:id="@+id/EntryWhen" />
+    <ToggleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOn="Ma oddać mi"
+        android:textOff="Ja mam oddać"
+        android:textSize="20sp"
+        android:id="@+id/EntryOwesMe" />
+    <Button
+        android:text="Zapisz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/EntrySave" />
+    <Button
+        android:text="Usuń"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/EntryDelete" />
+</LinearLayout>
