@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ApplicationName">Moje długi</string>
+  <string name="ApplicationName">Moje długi</string>
+  <string name="EntryList">Lista długów</string>
+  <string name="EntryAdd">Dodaj wpis</string>
+  <string name="EntryEdit">Edytuj wpis</string>
 </resources>

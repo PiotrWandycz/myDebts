@@ -9,7 +9,7 @@ using Android.App;
 [assembly: AssemblyTitle("MyDebts")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Piotr Wandycz")]
 [assembly: AssemblyProduct("MyDebts")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]

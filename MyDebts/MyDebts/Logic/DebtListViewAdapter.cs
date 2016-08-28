@@ -7,7 +7,7 @@ using Android.Widget;
 using Newtonsoft.Json;
 using MyDebts.Entities;
 
-namespace MyDebts.Resources
+namespace MyDebts.Logic
 {
     class DebtListViewAdapter : BaseAdapter<Person>
     {
@@ -42,30 +42,25 @@ namespace MyDebts.Resources
             View row = convertView;
             
             if (row == null)
-            {
                 row = LayoutInflater.From(_context).Inflate(Resource.Layout.DebtListViewRow, null, false);
-            }
 
             row.FindViewById<TextView>(Resource.Id.RowName).Text = _data[position].Name;
             row.FindViewById<TextView>(Resource.Id.RowAmount).Text = _data[position].Amount.ToString("0.00");
-            row.FindViewById<TextView>(Resource.Id.RowWhen).Text = _data[position].When.ToString("dd.MM.yy");
 
             if (String.IsNullOrEmpty(_data[position].Comment))
                 row.FindViewById<TextView>(Resource.Id.RowComment).Visibility = ViewStates.Gone;
             else
                 row.FindViewById<TextView>(Resource.Id.RowComment).Text = _data[position].Comment;
 
-            row.FindViewById<LinearLayout>(Resource.Id.RowMainContent).SetBackgroundColor
-                (_data[position].OwesMe ? Android.Graphics.Color.DarkGreen : Android.Graphics.Color.DarkRed);
+            row.FindViewById<ImageView>(Resource.Id.RowDebtIcon).SetImageResource
+                (_data[position].MyDebt ? Resource.Drawable.IcoBad : Resource.Drawable.IcoGood);
 
-            var editBtn = row.FindViewById<Button>(Resource.Id.RowEdit);
+            var editBtn = row.FindViewById<ImageButton>(Resource.Id.RowEdit);
             editBtn.Click += (object sender, EventArgs e) =>
             {
                 var intent = new Intent(_context, typeof(Activities.EditActivity));
-                intent.PutExtra("person", JsonConvert.SerializeObject(_data[position]));
-
+                intent.PutExtra("id", _data[position].Id);
                 _context.StartActivity(intent);
-                //_activity.Finish();
             };
 
             return row;

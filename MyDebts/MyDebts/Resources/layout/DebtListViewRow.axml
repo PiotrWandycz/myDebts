@@ -1,54 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r|S:#83ee00ff:16,56,l:16,0,r:16,0,l">
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/RowMainContent">
+        <ImageView
+            android:src="@drawable/IcoGood"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="2dp"
+            android:id="@+id/RowDebtIcon" />
         <TextView
-            android:text="Name"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:layout_weight="40"
+            android:text="Kto"
+            android:textColor="#FF000000"
+            android:textSize="16sp"
+            android:paddingTop="12dp"
+            android:paddingLeft="16dp"
+            android:layout_weight="65"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/RowName" />
         <TextView
-            android:text="Amount"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
+            android:text="Ile"
+            android:textColor="#FF000000"
+            android:textSize="16sp"
+            android:paddingTop="12dp"
+            android:paddingLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_width="0dp"
-            android:layout_weight="25"
+            android:layout_weight="35"
             android:layout_height="wrap_content"
             android:id="@+id/RowAmount" />
-        <TextView
-            android:text="When"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:layout_height="wrap_content"
-            android:id="@+id/RowWhen" />
-        <Button
-            android:text="E"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:layout_width="0dp"
-            android:layout_weight="10"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:src="@drawable/IcoEdit"
+            android:background="@null"
+            android:textColor="#FF000000"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:id="@+id/RowEdit" />
     </LinearLayout>
     <TextView
-        android:text="Comment"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
+        android:text="Komentarz"
+        android:textColor="#FF999999"
+        android:textSize="16sp"
+        android:paddingLeft="56dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/RowComment" />

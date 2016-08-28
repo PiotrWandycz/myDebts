@@ -4,44 +4,132 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
-    <EditText
-        android:inputType="textPersonName"
+    android:minHeight="25px"
+    android:layout_margin="16dp">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Kto"
-        android:textSize="20sp"
-        android:id="@+id/EntryName" />
-    <EditText
-        android:inputType="numberDecimal"
+        android:layout_weight="1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/icoperson"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:padding="2dp" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kto?"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/EntryName" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/icocoin"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:padding="2dp" />
+            <EditText
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ile?"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/EntryAmount" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/iconote"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="4dp" />
+            <EditText
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Za co?"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/EntryComment" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:layout_height="90px"
+            android:layout_width="match_parent">
+            <ImageView
+                android:src="@drawable/icocalendar"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:padding="2dp" />
+            <Button
+                android:text="Wybrana data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/EntryWhen"
+                android:background="@null"
+                android:paddingTop="8dp"
+                android:paddingLeft="3dp"
+                android:textColor="#FF2196F3" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/icorefresh"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:padding="2dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="90px"
+                android:text="Ja mam oddać?"
+                android:textSize="16sp"
+                android:id="@+id/EntryOwesMe"
+                android:layout_marginLeft="19dp"
+                android:paddingRight="5dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ile"
-        android:textSize="20sp"
-        android:id="@+id/EntryAmount" />
-    <DatePicker
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:firstDayOfWeek="2"
-        android:id="@+id/EntryWhen" />
-    <ToggleButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textOn="Ma oddać mi"
-        android:textOff="Ja mam oddać"
-        android:textSize="20sp"
-        android:id="@+id/EntryOwesMe" />
-    <Button
-        android:text="Zapisz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/EntrySave" />
-    <Button
-        android:text="Usuń"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/EntryDelete" />
+        android:layout_weight="0">
+        <Button
+            android:text="Usuń"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:textSize="14sp"
+            android:id="@+id/EntryDelete"
+            android:background="@null"
+            android:backgroundTint="#00F44336"
+            android:textColor="#ffF44336" />
+        <Button
+            android:text="Zapisz"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:textSize="14sp"
+            android:id="@+id/EntrySave"
+            android:background="@null"
+            android:backgroundTint="#004CAF50"
+            android:textColor="#ff4CAF50" />
+    </LinearLayout>
 </LinearLayout>

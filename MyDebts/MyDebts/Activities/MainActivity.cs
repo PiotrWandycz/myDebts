@@ -1,34 +1,60 @@
-﻿using System;
+﻿using System.Linq;
 using System.Collections.Generic;
 using Android.App;
 using Android.Widget;
 using Android.OS;
 using MyDebts.Entities;
-using MyDebts.Resources;
+using MyDebts.DB.DataServices;
+using Android.Views;
+using Android.Content;
+using MyDebts.Logic;
 
 namespace MyDebts.Activities
 {
-    [Activity(MainLauncher = true, Label = "Lista długów", Icon = "@drawable/appIcon")]
+    [Activity(MainLauncher = true, Icon = "@drawable/appIcon")]
     public class MainActivity : Activity
     {
+        PersonDataService personDS;
         ListView appDataListView;
         List<Person> appData;
+
+        public MainActivity()
+        {
+            personDS = new PersonDataService();
+        }
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             
             SetContentView(Resource.Layout.Main);
+            SetTitle(Resource.String.EntryList);
 
             appDataListView = FindViewById<ListView>(Resource.Id.appDataListView);
 
-            appData = new List<Person>();
-            appData.Add(new Person() { Id = Guid.NewGuid(), Name = "Maciek", When = DateTime.Now, Amount = 0.80f, Comment = "Za ksero", OwesMe = true });
-            appData.Add(new Person() { Id = Guid.NewGuid(), Name = "Alan", When = DateTime.Now, Amount = 15.0f, Comment = "Za pizze", OwesMe = false });
-            appData.Add(new Person() { Id = Guid.NewGuid(), Name = "Tomek", When = DateTime.Now, Amount = 300f, Comment = "", OwesMe = true });
+            appData = personDS.GetPeople().ToList();
 
             DebtListViewAdapter adapter = new DebtListViewAdapter(this, this, appData);
             appDataListView.Adapter = adapter;
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Layout.MainMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int itemId = item.ItemId;
+
+            if(itemId == Resource.Id.MainMenuAdd)
+            {
+                var intent = new Intent(this, typeof(EditActivity));
+                this.StartActivity(intent);
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
     }
 }
